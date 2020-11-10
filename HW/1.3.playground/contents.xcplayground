@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' display-mode='rendered' buildActiveScheme='true'>
+    <pages>
+        <page name='задание 1'/>
+        <page name='задание 2'/>
+        <page name='задание 3'/>
+        <page name='задание 4'/>
+        <page name='задание 5'/>
+        <page name='задание 6'/>
+    </pages>
+</playground>
