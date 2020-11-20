@@ -157,3 +157,7 @@ func fibonacci1(amount: Int) -> [Int] {
 
 fibonacci1(amount: 8)
 
+func isNumberEven(number: Int) {
+    number % 2 == 0
+}
+isNumberEven(number: 4)
