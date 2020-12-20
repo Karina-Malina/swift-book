@@ -18,14 +18,17 @@ class ColorPickerViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var redTextLabel: UILabel!
     @IBOutlet var redValueLabel: UILabel!
     @IBOutlet var redSlider: UISlider!
+    @IBOutlet var redTextField: UITextField!
     
     @IBOutlet var greenTextLabel: UILabel!
     @IBOutlet var greenValueLabel: UILabel!
     @IBOutlet var greenSlider: UISlider!
+    @IBOutlet var greenTextField: UITextField!
     
     @IBOutlet var blueTextLabel: UILabel!
     @IBOutlet var blueValueLabel: UILabel!
     @IBOutlet var blueSlider: UISlider!
+    @IBOutlet var blueTextField: UITextField!
     
     @IBOutlet var doneButton: UIButton!
     
@@ -38,6 +41,12 @@ class ColorPickerViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        redTextField.delegate = self
+        greenTextField.delegate = self
+        blueTextField.delegate = self
+        
+        redTextField.returnKeyType = UIReturnKeyType.done
+        
         redTextLabel.text = "Red"
         greenTextLabel.text = "Green"
         blueTextLabel.text = "Blue"
@@ -49,6 +58,10 @@ class ColorPickerViewController: UIViewController, UITextFieldDelegate {
         redSlider.minimumTrackTintColor = .red
         greenSlider.minimumTrackTintColor = .green
         blueSlider.minimumTrackTintColor = .blue
+        
+        redTextField.text = String(Int(redColor))
+        greenTextField.text = String(Int(greenColor))
+        blueTextField.text = String(Int(blueColor))
         
         redSlider.minimumValue = 0
         redSlider.maximumValue = 255
@@ -72,21 +85,21 @@ class ColorPickerViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func redSliderAction() {
-        redValueLabel.text = String(Int(redSlider.value))
+//        redValueLabel.text = String(Int(redSlider.value))
         redColor = CGFloat(redSlider.value)
-        setViewColor()
+        setColor()
     }
    
     @IBAction func greenSliderAction() {
-        greenValueLabel.text = String(Int(greenSlider.value))
+//        greenValueLabel.text = String(Int(greenSlider.value))
         greenColor = CGFloat(greenSlider.value)
-        setViewColor()
+        setColor()
     }
     
     @IBAction func blueSliderAction() {
-        blueValueLabel.text = String(Int(blueSlider.value))
+//        blueValueLabel.text = String(Int(blueSlider.value))
         blueColor = CGFloat(blueSlider.value)
-        setViewColor()
+        setColor()
     }
     
     @IBAction func closeColorPickerTab(_ sender: Any) {
@@ -97,11 +110,34 @@ class ColorPickerViewController: UIViewController, UITextFieldDelegate {
                                                    alpha: 1))
     }
     
-    private func setViewColor() {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        redColor = CGFloat(Int(redTextField.text!)!)
+        greenColor = CGFloat(Int(greenTextField.text!)!)
+        blueColor = CGFloat(Int(blueTextField.text!)!)
+        setColor()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        self.view.endEditing(true)
+    }
+    
+    private func setColor() {
         colorPickerView.backgroundColor = UIColor(red: redColor / 255,
                                                   green: greenColor / 255,
                                                   blue: blueColor / 255,
                                                   alpha: 1)
+        redValueLabel.text = String(Int(redColor))
+        greenValueLabel.text = String(Int(greenColor))
+        blueValueLabel.text = String(Int(blueColor))
+        
+        redTextField.text = String(Int(redColor))
+        greenTextField.text = String(Int(greenColor))
+        blueTextField.text = String(Int(blueColor))
+        
+        redSlider.value = Float(redColor)
+        greenSlider.value = Float(greenColor)
+        blueSlider.value = Float(blueColor)
     }
 }
 
