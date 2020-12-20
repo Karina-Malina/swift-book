@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eA9-vL-VB4">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
@@ -8,12 +8,34 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Start View Controller-->
+        <scene sceneID="RFO-ev-swO">
+            <objects>
+                <viewController id="3fd-Kd-cQF" customClass="StartViewController" customModule="ColorPicker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="odk-zG-AdD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="NmK-Dp-5Pm"/>
+                        <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="bse-5i-Hik">
+                        <barButtonItem key="rightBarButtonItem" image="square.and.pencil" catalog="system" id="1iB-0X-XNM">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="presentation" identifier="" id="BhR-fF-cNK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ePg-mY-ghD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="222" y="81"/>
+        </scene>
+        <!--Color Picker View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ColorPicker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ColorPickerViewController" customModule="ColorPicker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="64" translatesAutoresizingMaskIntoConstraints="NO" id="lJh-qC-mjU">
@@ -74,7 +96,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KOo-76-gxc">
-                                                        <rect key="frame" x="60" y="0.0" width="41.5" height="94"/>
+                                                        <rect key="frame" x="60" y="0.0" width="41" height="94"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="41" id="ZR1-df-EOp"/>
                                                         </constraints>
@@ -83,7 +105,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="bMG-Wh-Zk5">
-                                                        <rect key="frame" x="109.5" y="0.0" width="235.5" height="95"/>
+                                                        <rect key="frame" x="109" y="0.0" width="236" height="95"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="267.33333333333337" id="BJ6-c4-t7h"/>
                                                         </constraints>
@@ -133,12 +155,24 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ufd-vF-b5o">
+                                <rect key="frame" x="144.5" y="559" width="86" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeColorPickerTab:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SRQ-RN-XDM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGray2Color"/>
                         <constraints>
                             <constraint firstItem="lJh-qC-mjU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="6XX-s4-WLW"/>
+                            <constraint firstItem="Ufd-vF-b5o" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Cc7-Po-ABi"/>
                             <constraint firstItem="lJh-qC-mjU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="KGb-o5-geg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ufd-vF-b5o" secondAttribute="bottom" constant="40" id="YIp-JM-oUL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lJh-qC-mjU" secondAttribute="trailing" constant="16" id="Zhs-vv-oRr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="lJh-qC-mjU" secondAttribute="bottom" constant="313" id="wSP-C8-Uwb"/>
                         </constraints>
@@ -148,6 +182,7 @@
                         <outlet property="blueTextLabel" destination="Zqm-9b-PhF" id="zNq-Or-oY3"/>
                         <outlet property="blueValueLabel" destination="gfh-au-Cfb" id="MBv-5B-ULj"/>
                         <outlet property="colorPickerView" destination="oPQ-el-8W0" id="iPR-qV-BL9"/>
+                        <outlet property="doneButton" destination="Ufd-vF-b5o" id="ok2-h2-oRi"/>
                         <outlet property="greenSlider" destination="bMG-Wh-Zk5" id="e6t-4r-Tbe"/>
                         <outlet property="greenTextLabel" destination="YVi-w0-Dc4" id="33Q-VD-l7V"/>
                         <outlet property="greenValueLabel" destination="KOo-76-gxc" id="Fvp-SH-JH4"/>
@@ -158,15 +193,40 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-71.25" y="92.957746478873247"/>
+            <point key="canvasLocation" x="1100" y="81.409295352323838"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5BC-40-CjL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eA9-vL-VB4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="e0J-78-x6R">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3fd-Kd-cQF" kind="relationship" relationship="rootViewController" id="6Ho-Tl-YSL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qhq-Xq-kU5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-718" y="81"/>
         </scene>
     </scenes>
     <resources>
+        <image name="square.and.pencil" catalog="system" width="128" height="115"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

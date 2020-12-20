@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		3DB746ED257BEE5B0090AE77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB746EC257BEE5B0090AE77 /* AppDelegate.swift */; };
 		3DB746EF257BEE5B0090AE77 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB746EE257BEE5B0090AE77 /* SceneDelegate.swift */; };
-		3DB746F1257BEE5B0090AE77 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB746F0257BEE5B0090AE77 /* ViewController.swift */; };
+		3DB746F1257BEE5B0090AE77 /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB746F0257BEE5B0090AE77 /* ColorPickerViewController.swift */; };
 		3DB746F4257BEE5B0090AE77 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DB746F2257BEE5B0090AE77 /* Main.storyboard */; };
 		3DB746F6257BEE5D0090AE77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DB746F5257BEE5D0090AE77 /* Assets.xcassets */; };
 		3DB746F9257BEE5D0090AE77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DB746F7257BEE5D0090AE77 /* LaunchScreen.storyboard */; };
+		3DB7BAE9258E650800D42F40 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB7BAE8258E650800D42F40 /* StartViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3DB746E9257BEE5B0090AE77 /* ColorPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DB746EC257BEE5B0090AE77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DB746EE257BEE5B0090AE77 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3DB746F0257BEE5B0090AE77 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3DB746F0257BEE5B0090AE77 /* ColorPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
 		3DB746F3257BEE5B0090AE77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3DB746F5257BEE5D0090AE77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3DB746F8257BEE5D0090AE77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3DB746FA257BEE5D0090AE77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DB7BAE8258E650800D42F40 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +60,8 @@
 			children = (
 				3DB746EC257BEE5B0090AE77 /* AppDelegate.swift */,
 				3DB746EE257BEE5B0090AE77 /* SceneDelegate.swift */,
-				3DB746F0257BEE5B0090AE77 /* ViewController.swift */,
+				3DB746F0257BEE5B0090AE77 /* ColorPickerViewController.swift */,
+				3DB7BAE8258E650800D42F40 /* StartViewController.swift */,
 				3DB746F2257BEE5B0090AE77 /* Main.storyboard */,
 				3DB746F5257BEE5D0090AE77 /* Assets.xcassets */,
 				3DB746F7257BEE5D0090AE77 /* LaunchScreen.storyboard */,
@@ -137,7 +140,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DB746F1257BEE5B0090AE77 /* ViewController.swift in Sources */,
+				3DB746F1257BEE5B0090AE77 /* ColorPickerViewController.swift in Sources */,
+				3DB7BAE9258E650800D42F40 /* StartViewController.swift in Sources */,
 				3DB746ED257BEE5B0090AE77 /* AppDelegate.swift in Sources */,
 				3DB746EF257BEE5B0090AE77 /* SceneDelegate.swift in Sources */,
 			);
